@@ -4,6 +4,8 @@ from flask import request, jsonify
 from s3fs import S3FileSystem
 from llama_index.core import (VectorStoreIndex,SimpleDirectoryReader,StorageContext)
 from llama_index.core import Settings
+from llama_index.readers.airtable import AirtableReader
+from llama_index.readers.azstorage_blob import AzStorageBlobReader
 
 from utils import set_embedding_model, set_api_key
 from llama_iris import IRISVectorStore
@@ -57,6 +59,30 @@ def upload_data():
         s3_fs = S3FileSystem(key=access_key, secret=secret)
         reader = SimpleDirectoryReader(input_dir=bucket_name, fs=s3_fs, recursive=True)
         documents = reader.load_data()
+
+    elif load_type == "airtable":
+        airtable_token = request.form.get('airtable_token')
+        table_id = request.form.get('table_id')
+        base_id = request.form.get('base_id')
+
+        if not all([airtable_token, table_id, base_id]):
+            return jsonify({"error": "Missing required Airtable parameters"}), 400
+
+        reader = AirtableReader(airtable_token)
+        documents = reader.load_data(table_id=table_id, base_id=base_id)
+    
+    elif load_type == "azure":
+        container_name = request.form.get('container_name')
+        connection_string = request.form.get('connection_string')
+
+        if not all([container_name, connection_string]):
+            return jsonify({"error": "Missing required Azure Blob Storage parameters"}), 400
+
+        loader = AzStorageBlobReader(
+            container_name=container_name,
+            connection_string=connection_string,
+        )
+        documents = loader.load_data()
 
     else:
         return jsonify({"error": "Invalid input type"}), 400

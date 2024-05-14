@@ -1,11 +1,10 @@
 flask
 gunicorn
 python-dotenv
-langchain
-langchain-community
-langchain-openai
 openai
 llama-index
 s3fs
 llama-index-llms-cohere
 llama-index-embeddings-cohere
+llama-index-readers-airtable
+llama-index-readers-azstorage-blob
