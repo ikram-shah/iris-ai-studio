@@ -1,6 +1,7 @@
 flask
 gunicorn
 python-dotenv
+sqlalchemy-iris
 openai
 llama-index
 s3fs
@@ -8,3 +9,5 @@ llama-index-llms-cohere
 llama-index-embeddings-cohere
 llama-index-readers-airtable
 llama-index-readers-azstorage-blob
+llama-index-postprocessor-cohere-rerank
+llama-index-postprocessor-rankgpt-rerank

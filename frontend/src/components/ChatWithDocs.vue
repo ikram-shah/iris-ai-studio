@@ -227,6 +227,7 @@ export default {
           })
           .catch((error) => {
             console.error("Error fetching tables:", error);
+            alert(error.response.data.error)
           });
       }
     },

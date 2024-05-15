@@ -56,17 +56,21 @@
       </div>
     </form>
     <!-- Result Box -->
-    <div v-if="result" class="mt-4 pt-4 rounded-lg">
-      <h2 class="text-left text-lg font-normal text-gray-600 pb-4">Response</h2>
+    <div v-if="result && !isLoading" class="mt-4 pt-4 rounded-lg">
+      <h2 class="text-left text-sm font-medium text-gray-400 pb-4">RESPONSE</h2>
       <p class="text-wrap text-gray-900 text-2xl">
         <span>{{ result }}</span>
       </p>
+    </div>
+    <div v-if="isLoading">
+      <PageLoading />
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import PageLoading from "./PageLoading.vue";
 
 export default {
   data() {
@@ -91,7 +95,11 @@ export default {
       embeddingDimension: "",
       query: "",
       result: null,
+      isLoading: false
     };
+  },
+  components: {
+    PageLoading
   },
   mounted() {
     this.fetchTables();
@@ -126,10 +134,12 @@ export default {
           })
           .catch((error) => {
             console.error("Error fetching tables:", error);
+            alert(error.response.data.error)
           });
       }
     },
     submitQuery() {
+      this.isLoading = true
       const localData = JSON.parse(localStorage.getItem("instances"));
       const activeInstances = localData.filter((instance) => instance.isActive);
       const activeInstance = activeInstances[0];
@@ -140,7 +150,6 @@ export default {
 
       if (activeInstance) {
         const { username, password, hostname, port, namespace } = activeInstance;
-
         axios
           .post("api/query_engine", {
             username,
@@ -163,6 +172,10 @@ export default {
           })
           .catch((error) => {
             console.error("Error submitting query:", error);
+            alert(error.response.data.error)
+          })
+          .finally(() => {
+            this.isLoading = false;
           });
       }
     },

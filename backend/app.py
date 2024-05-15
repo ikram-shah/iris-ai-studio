@@ -3,6 +3,8 @@ from flask import Flask, request, jsonify
 from database import query_database
 from query_llama import query_engine_llama
 from chat_llama import chat_engine_llama
+from similarity_llama import similarity_engine_llama
+from reco_llama import reco_engine_llama
 from data_loader import upload_data
 from list_tables import get_table_list
 
@@ -26,6 +28,14 @@ def query_engine_route():
 @app.route("/chat_engine", methods=["POST"])
 def chat_engine_route():
     return chat_engine_llama()
+
+@app.route("/similarity_engine", methods=["POST"])
+def similarity_engine_route():
+    return similarity_engine_llama()
+
+@app.route("/reco_engine", methods=["POST"])
+def reco_engine_route():
+    return reco_engine_llama()
 
 @app.route("/upload_data", methods=["POST"])
 def upload_data_route():

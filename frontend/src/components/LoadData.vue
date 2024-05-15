@@ -293,6 +293,7 @@ const uploadData = async (formDataValue) => {
     uploadStatus.value = "failed";
     errorNote.value = error;
     console.error("Error uploading data:", error);
+    alert(error.response.data.error)
   }
 };
 
