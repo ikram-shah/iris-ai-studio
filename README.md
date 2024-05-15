@@ -1,12 +1,29 @@
-### IRIS AI Studio
+# IRIS AI Studio
 
-A simple tool that can be used as no-code/low-code to explore the capabilities of vector embeddings in IRIS DB. 
+[![Gitter](https://img.shields.io/badge/Available%20on-Intersystems%20Open%20Exchange-00b2a9.svg)](https://openexchange.intersystems.com/package/iris-ai-studio)
+
+A no-code/low-code tool to explore the capabilities of vector embeddings in InterSystems IRIS DB. 
+
+- **Connectors** let load data from files as vector embeddings into IRIS DB
+
+- **Playground** let users explore different retrival channels on the vector embeddings reside in IRIS DB
 
 ![Process Flow](assets/pipeline.png)
 
+### Try Online
+https://iris-ai-studio.vercel.app/
+
+**Step 1**: Setup the Instance details and API Keys in settings
+
+**Step 2**: Through connectors load data into IRIS DB
+
+**Step 3**: In playground, explore different retrieval options
+
+###### ⚠️ This application is deployed on render.com and the IRIS instance & API key info used on the live version may have been logged. Strongly recommended to use only development or temporary IRIS instances to explore the solution, and deactivate or delete the keys after use. Also, backend runs on a tiny server and won't be able to handle heavy workloads.
+
 ### Instructions to Run
 
-### IRIS Instance
+#### IRIS Instance
 
 [Follow the instructions](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ACLOUD) to spin off an InterSystems Community Edition of your choice - Local, Cloud, Web 
 
@@ -35,3 +52,33 @@ gunicorn app:app
 ```
 
 Access the APIs at http://127.0.0.1:8000
+
+#### Folder Structure
+
+```
+iris-ai-studio/
+├──frontend                
+│   ├── src/
+│   ├── .env                 
+│   └── ...
+├── backend/
+│   └── app.py
+│   ├── data_loader.py
+│   ├── chat_llama.py
+│   ├── query_llama.py
+│   ├── similarity_llama.py
+│   ├── reco_llama.py
+│   ├── requirements.txt
+│   │   └── ...
+├── assets/
+├── README.md
+└── LICENSE
+```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+You can find the full text of the license in the [LICENSE](LICENSE) file.
+
+
