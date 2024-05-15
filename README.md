@@ -21,6 +21,18 @@ https://iris-ai-studio.vercel.app/
 
 ###### ⚠️ This application is deployed on render.com and the IRIS instance & API key info used on the live version may have been logged. Strongly recommended to use only development or temporary IRIS instances to explore the solution, and deactivate or delete the keys after use. Also, backend runs on a tiny server and won't be able to handle heavy workloads.
 
+### Tech Stack
+
+- Frontend: VueJS, TailwindCSS, Flowbite
+  
+- Backend: Python, Flask
+  
+- Database: InterSystems IRIS
+
+- Frameworks/Libraries/Services: Llama-Index, SQLalchemy-iris, OpenAI, Cohere
+  
+- Infrastructure: Vercel (frontend hosting), Render (backend hosting)
+
 ### Instructions to Run
 
 #### IRIS Instance
