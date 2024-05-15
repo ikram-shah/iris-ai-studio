@@ -39,7 +39,7 @@
       <div class="flex flex-1 justify-end">
         <ActiveInstance />
         <a
-          href="https://github.com/ikram-shah"
+          href="https://github.com/ikram-shah/iris-ai-studio"
           target="_blank"
           rel="noopener noreferrer"
           class="flex items-center ml-3 hover:bg-transparent hover:text-iscblue"
