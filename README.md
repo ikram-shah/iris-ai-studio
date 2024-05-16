@@ -1,6 +1,6 @@
 # IRIS AI Studio
 
-[![Gitter](https://img.shields.io/badge/Available%20on-Intersystems%20Open%20Exchange-00b2a9.svg)](https://openexchange.intersystems.com/package/iris-ai-studio)
+[![Gitter](https://img.shields.io/badge/Available%20on-Intersystems%20Open%20Exchange-00b2a9.svg)](https://openexchange.intersystems.com/package/IRIS-AI-Studio-2)
 
 A no-code/low-code tool to explore the capabilities of vector embeddings in InterSystems IRIS DB. 
 
@@ -12,6 +12,8 @@ A no-code/low-code tool to explore the capabilities of vector embeddings in Inte
 
 ### Try Online
 https://iris-ai-studio.vercel.app/
+
+Designed and developed only for web interface, not compatible with mobile
 
 **Step 1**: Setup the Instance details and API Keys in settings
 
