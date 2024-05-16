@@ -1,5 +1,6 @@
 <template>
   <div class="w-full">
+    <img class="mb-8" src="../assets/pipeline.png" alt="Flow Chart" />
     <div class="w-4/5 justify-center items-center mx-auto" id="accordion-collapse" data-accordion="collapse">
       <div v-for="(item, index) in accordionItems" :key="index" class="accordion">
         <h2 :id="'accordion-collapse-heading-' + index">
@@ -23,7 +24,6 @@
         </div>
       </div>
     </div>
-    <img class="mt-8" src="../assets/pipeline.png" alt="Flow Chart" />
   </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
       accordionItems: [
         {
           question: "What is IRIS AI Studio?",
-          answer: "An open source application that lets you explore the capabilities of vector embeddings in InterSystems IRIS DB. It has two major modules, Connectors let load data from files as vector embeddings into IRIS DB & Playground let users explore different retrival channels on the vector embeddings reside in IRIS DB.",
+          answer: "An open source application that lets you explore the capabilities of vector embeddings in InterSystems IRIS DB. It has two major modules, Connectors let load data from files as vector embeddings into IRIS DB & Playground let users explore different retrieval channels on the vector embeddings reside in IRIS DB.",
           isOpen: true
         },
         {

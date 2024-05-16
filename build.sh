@@ -27,7 +27,7 @@ docker-compose up -d
 echo "Starting frontend"
 cd frontend/
 npm install
-npm run dev -- --port 8080 &
+npm run dev -- --port 5173 &
 
 # Start backend (Python - Flask)
 echo "Starting backend"

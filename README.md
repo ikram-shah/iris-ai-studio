@@ -6,7 +6,7 @@ A no-code/low-code tool to explore the capabilities of vector embeddings in Inte
 
 - **Connectors** let load data from files as vector embeddings into IRIS DB
 
-- **Playground** let users explore different retrival channels on the vector embeddings reside in IRIS DB
+- **Playground** let users explore different retrieval channels on the vector embeddings reside in IRIS DB
 
 ![Process Flow](assets/pipeline.png)
 
@@ -37,11 +37,32 @@ Designed and developed only for web interface, not compatible with mobile
 
 ### Instructions to Run
 
+Simply execute the script using the following command.
+
+```
+./build.sh
+```
+
+If any permission issue while executing the script, allow it through `chmod +x build.sh`
+
+Access the **UI** at http://localhost:5173
+
+Access the **APIs** at http://127.0.0.1:8000
+
+**Credentials for Local InterSystems IRIS Instance**
+username: demo
+password: demo
+hostname: localhost
+port: 1972
+namespace: USER
+
 #### IRIS Instance
 
-[Follow the instructions](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ACLOUD) to spin off an InterSystems Community Edition of your choice - Local, Cloud, Web 
+[Follow the instructions](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ACLOUD) to spin off a Cloud InterSystems Community Edition
 
-Once you have the credentials, in the frontend application's settings page the credentials can be added. You may add more than one instance and choose to use whichever one for data ingestion or retrival process independently. 
+Once you have the credentials, in the frontend application's settings page the credentials can be added. You may add more than one instance and choose to use whichever one for data ingestion or retrieval process independently. 
+
+You may follow the following instructions to individually run the frontend and backend
 
 #### Frontend (VueJS)
 
@@ -52,8 +73,6 @@ cd frontend
 npm i
 npm run dev
 ```
-
-Access the UI at http://localhost:5173
 
 #### Backend (Python)
 
