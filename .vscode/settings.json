@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+
+        "Dockerfile*": "dockerfile",
+        "iris.script": "objectscript"
+      },
+    "objectscript.conn" :{
+      "ns": "USER",
+      "username": "demo",
+      "password": "demo",
+      "docker-compose": {
+        "service": "iris",
+        "internalPort": 52773
+      },
+      "active": true
+    }
+
+}
