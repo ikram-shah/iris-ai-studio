@@ -11,8 +11,8 @@ kill_process_using_port() {
 }
 
 # Kill processes using ports 5173 and 8000
-kill_process_using_port 5173
-kill_process_using_port 8000
+kill_process_using_port 5173    #frontend
+kill_process_using_port 8000    #backend
 
 # Remove all stopped containers, unused networks, dangling images, and build cache
 docker system prune -f
@@ -34,9 +34,6 @@ echo "Starting backend"
 cd ../backend/
 pip install -r requirements.txt
 gunicorn app:app -b 127.0.0.1:8000 &
-
-# Wait for any process to exit
-wait -n
 
 # Exit with status of process that exited first
 exit $?

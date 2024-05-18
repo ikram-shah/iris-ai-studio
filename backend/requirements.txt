@@ -11,3 +11,4 @@ llama-index-readers-airtable
 llama-index-readers-azstorage-blob
 llama-index-postprocessor-cohere-rerank
 llama-index-postprocessor-rankgpt-rerank
+llama-index-readers-file
